@@ -1,2 +1,4 @@
 github "ReactiveX/RxSwift"
 github "Alamofire/Alamofire" "5.0.0.beta.1"
+github "RxSwiftCommunity/RxAlamofire" "master"
+github "RxSwiftCommunity/RxSwiftExt"
