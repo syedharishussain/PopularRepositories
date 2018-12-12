@@ -15,15 +15,11 @@ class SearchResultCell: UITableViewCell {
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var starsLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configureViews(item: SearchResult.Item) {
+        titleLabel.text = item.name
+        descriptionLabel.text = item.description
+        languageLabel.text = "Language: \(item.language ?? "N/A")"
+        let stars: Int = item.stargazersCount ?? 0
+        starsLabel.text = stars <= 1 ? "Star: \(stars)" : "Stars: \(stars)"
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

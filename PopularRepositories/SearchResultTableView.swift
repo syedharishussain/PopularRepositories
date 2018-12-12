@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SearchResultTableView: UITableView {
+    
+    var items = Variable<[SearchResult.Item]>([])
+    let disposeBag = DisposeBag()
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    func bindDataSource() {
+        self.items
+            .asObservable()
+            .bind(to: self.rx.items(
+                    cellIdentifier: String(describing: SearchResultCell.self),
+                    cellType: SearchResultCell.self
+                )
+            )
+            { row, item, cell in
+                cell.configureViews(item: item)
+            }
+            .disposed(by: disposeBag)
     }
-    */
-
 }
