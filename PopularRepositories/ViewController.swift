@@ -41,7 +41,7 @@ class ViewController: UIViewController {
                     }
                     .disposed(by: self.disposeBag)
             }, onError: { (error) in
-                
+                SVProgressHUD.showError(withStatus: error.localizedDescription)
             })
             .disposed(by: disposeBag)
     }

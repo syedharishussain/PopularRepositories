@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import RxSwiftExt
 import Alamofire
+import SVProgressHUD
 
 class DetailViewController: UIViewController {
     
@@ -67,9 +68,8 @@ extension DetailViewController {
                 .repeatWithBehavior(RepeatBehavior.delayed(maxCount: UInt.max, time: 1.0))
                 .subscribe(onNext: { (item) in
                     self.updateVariables(from: item)
-                    print("something")
                 }, onError: { (error) in
-                    
+                    SVProgressHUD.showError(withStatus: error.localizedDescription)
                 }).disposed(by: disposeBag)
         }
         
@@ -81,7 +81,7 @@ extension DetailViewController {
                     .responseDecodable(
                         decoder: AppConstants.decoder,
                         completionHandler: { (response: DataResponse<SearchResult.Item>) in
-                        
+                            
                         switch response.result {
                         case .success(let value):
                             observer.onNext(value)
