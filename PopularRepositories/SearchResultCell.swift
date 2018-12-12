@@ -7,14 +7,40 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SearchResultCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    func configureViews(item: SearchResult.Item) {
-        titleLabel.text = item.name
-        descriptionLabel.text = item.description
+    let disposeBag = DisposeBag()
+    
+    var viewModel: SearchResultCell.ViewModel? {
+        didSet {
+            guard let vm = self.viewModel else {return}
+            
+            vm.title.asObservable().bind(to: self.titleLabel.rx.text).disposed(by: disposeBag)
+            vm.description.asObservable().bind(to: self.descriptionLabel.rx.text).disposed(by: disposeBag)
+        }
+    }
+}
+
+extension SearchResultCell {
+    
+    struct ViewModel {
+        
+        let title = Variable<String>("")
+        let description = Variable<String>("")
+        
+        init(item: SearchResult.Item) {
+            self.updateVariables(from: item)
+        }
+        
+        private func updateVariables(from item: SearchResult.Item) {
+            self.title.value = item.name ?? ""
+            self.description.value = item.description ?? ""
+        }
     }
 }
