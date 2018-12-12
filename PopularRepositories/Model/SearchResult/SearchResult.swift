@@ -9,7 +9,7 @@
 import Foundation
 
 struct SearchResult: Codable {
-    let totalCount: Int
-    let incompleteResults: Bool
+    let totalCount: Int?
+    let incompleteResults: Bool?
     let items: [SearchResult.Item]
 }
