@@ -9,42 +9,42 @@
 import Foundation
 
 extension SearchResult {
-    public struct Item {
+    struct Item: Codable {
         let id: Int
         let nodeId: String
         let name: String
         let fullName: String
-        let owner: [SearchResult.Item.Owner]
+        let owner: SearchResult.Item.Owner
         let `private`: Bool
-        let htmlUrl: String
-        let description: String
+        let htmlUrl: String?
+        let description: String?
         let fork: Bool
         let url: URL
-        let createdAt: Date
-        let updatedAt: Date
-        let pushedAt: Date
-        let homepage: String
+        let createdAt: Date?
+        let updatedAt: Date?
+        let pushedAt: Date?
+        let homepage: String?
         let size: Int
         let stargazersCount: Int
         let watchersCount: Int
         let language: String
         let forksCount: Int
         let openIssuesCount: Int
-        let masterBranch: String
-        let defaultBranch: String
+        let masterBranch: String?
+        let defaultBranch: String?
         let score: Double
     }
 }
 
 extension SearchResult.Item {
-    struct Owner {
+    struct Owner: Codable {
         let login: String
         let id: Int
         let nodeId: String
         let avatarUrl: URL
-        let gravatarId: String
+        let gravatarId: String?
         let url: URL
-        let receivedEventsUrl: URL
+        let receivedEventsUrl: URL?
         let type: String
     }
 }
