@@ -36,8 +36,8 @@ class ViewController: UIViewController {
                     .bind(to: self.tableView.rx.items(
                         cellIdentifier: String(describing: SearchResultCell.self),
                         cellType: SearchResultCell.self
-                    )) { row, item, cell in
-                        cell.configureViews(item: item)
+                    )) { _, item, cell in
+                        cell.viewModel = SearchResultCell.ViewModel(item: item)
                     }
                     .disposed(by: self.disposeBag)
             }, onError: { (error) in
