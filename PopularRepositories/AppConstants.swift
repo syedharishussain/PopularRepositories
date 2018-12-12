@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 struct AppConstants {
     static let apiUrl: String = "https://api.github.com/search/repositories?q=stars%3A%3E0&s=stars&type=Repositories"
@@ -15,4 +16,6 @@ struct AppConstants {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         return decoder
         }()
+    
+    static let noCacheHeader: Alamofire.HTTPHeaders = ["Cache-Control": "no-cache"]
 }

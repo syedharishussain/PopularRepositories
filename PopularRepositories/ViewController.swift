@@ -70,7 +70,6 @@ extension ViewController {
             
             return Observable.create { observer -> Disposable in
                 AF.request(AppConstants.apiUrl)
-                    .validate()
                     .responseDecodable(
                         decoder: AppConstants.decoder,
                         completionHandler: { (response: DataResponse<SearchResult>) in
