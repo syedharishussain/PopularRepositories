@@ -1,4 +1,4 @@
 github "Alamofire/Alamofire" "5.0.0.beta.1"
 github "ReactiveX/RxSwift" "4.4.0"
-github "RxSwiftCommunity/RxAlamofire" "f8b0b00ad6253dbf9c1deb0e77bc3fb1b5178ec0"
 github "RxSwiftCommunity/RxSwiftExt" "3.4.0"
+github "SVProgressHUD/SVProgressHUD" "2.2.5"

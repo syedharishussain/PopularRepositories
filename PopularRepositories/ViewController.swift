@@ -11,6 +11,7 @@ import RxSwiftExt
 import RxSwift
 import RxCocoa
 import Alamofire
+import SVProgressHUD
 
 class ViewController: UIViewController {
     
@@ -69,19 +70,24 @@ extension ViewController {
         func getRepositories() -> Observable<SearchResult> {
             
             return Observable.create { observer -> Disposable in
+                
+                SVProgressHUD.showInfo(withStatus: "Loading..")
+                
                 AF.request(AppConstants.apiUrl)
                     .responseDecodable(
                         decoder: AppConstants.decoder,
                         completionHandler: { (response: DataResponse<SearchResult>) in
                             
-                        switch response.result {
-                        case .success(let value):
-                            observer.onNext(value)
+                            SVProgressHUD.dismiss()
                             
-                        case .failure(let error):
-                            observer.onError(error)
-                        }
-                })
+                            switch response.result {
+                            case .success(let value):
+                                observer.onNext(value)
+                                
+                            case .failure(let error):
+                                observer.onError(error)
+                            }
+                    })
                 
                 return Disposables.create()
             }
