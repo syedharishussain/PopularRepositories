@@ -13,6 +13,8 @@
 		662736F521C07B9600E6EF94 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662736F021C07B9600E6EF94 /* Alamofire.framework */; };
 		662736F621C07B9600E6EF94 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662736F121C07B9600E6EF94 /* RxCocoa.framework */; };
 		662736F721C07B9600E6EF94 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 662736F221C07B9600E6EF94 /* RxSwift.framework */; };
+		6647D5FC21C19E2E0019C74C /* SearchResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647D5FB21C19E2E0019C74C /* SearchResultTableView.swift */; };
+		6647D5FE21C19E910019C74C /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647D5FD21C19E910019C74C /* SearchResultCell.swift */; };
 		669273DD21C059FA006120EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669273DC21C059FA006120EF /* AppDelegate.swift */; };
 		669273DF21C059FA006120EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669273DE21C059FA006120EF /* ViewController.swift */; };
 		669273E221C059FA006120EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669273E021C059FA006120EF /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 		662736F021C07B9600E6EF94 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		662736F121C07B9600E6EF94 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		662736F221C07B9600E6EF94 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		6647D5FB21C19E2E0019C74C /* SearchResultTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableView.swift; sourceTree = "<group>"; };
+		6647D5FD21C19E910019C74C /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		669273D921C059FA006120EF /* PopularRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopularRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		669273DC21C059FA006120EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		669273DE21C059FA006120EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 			children = (
 				662736E221C0746F00E6EF94 /* Model */,
 				669273DC21C059FA006120EF /* AppDelegate.swift */,
+				6647D5FB21C19E2E0019C74C /* SearchResultTableView.swift */,
+				6647D5FD21C19E910019C74C /* SearchResultCell.swift */,
 				669273DE21C059FA006120EF /* ViewController.swift */,
 				669273E021C059FA006120EF /* Main.storyboard */,
 				669273E321C059FB006120EF /* Assets.xcassets */,
@@ -276,6 +282,8 @@
 				669273DF21C059FA006120EF /* ViewController.swift in Sources */,
 				662736EA21C0772B00E6EF94 /* SearchResult+Item.swift in Sources */,
 				662736E621C076C700E6EF94 /* SearchResult.swift in Sources */,
+				6647D5FC21C19E2E0019C74C /* SearchResultTableView.swift in Sources */,
+				6647D5FE21C19E910019C74C /* SearchResultCell.swift in Sources */,
 				669273DD21C059FA006120EF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

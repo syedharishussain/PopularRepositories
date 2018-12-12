@@ -18,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pbw-JI-761">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pbw-JI-761" customClass="SearchResultTableView" customModule="PopularRepositories" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="157" id="Hap-Ny-ulD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" rowHeight="157" id="Hap-Ny-ulD" customClass="SearchResultCell" customModule="PopularRepositories" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="157"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hap-Ny-ulD" id="pQO-nM-Jge">
@@ -68,6 +68,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="vSX-Db-y0e" secondAttribute="bottom" id="4Ym-ew-yHI"/>
                                                 <constraint firstItem="JHm-4w-hj4" firstAttribute="top" secondItem="79e-QG-wHS" secondAttribute="bottom" constant="8" id="A1E-bx-kBp"/>
                                                 <constraint firstItem="79e-QG-wHS" firstAttribute="leading" secondItem="pQO-nM-Jge" secondAttribute="leadingMargin" id="Bo7-x0-azh"/>
+                                                <constraint firstItem="JHm-4w-hj4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vSX-Db-y0e" secondAttribute="trailing" constant="8" id="Kfb-U1-xMB"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="JHm-4w-hj4" secondAttribute="trailing" id="Mw7-jz-zWc"/>
                                                 <constraint firstItem="i3p-ol-efk" firstAttribute="top" secondItem="pQO-nM-Jge" secondAttribute="topMargin" id="Q1t-JS-Hwd"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="i3p-ol-efk" secondAttribute="trailing" id="SpE-yF-kP4"/>
@@ -78,6 +79,12 @@
                                                 <constraint firstItem="79e-QG-wHS" firstAttribute="trailing" secondItem="pQO-nM-Jge" secondAttribute="trailingMargin" id="zIi-df-fur"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="79e-QG-wHS" id="Rz1-ay-OUS"/>
+                                            <outlet property="languageLabel" destination="vSX-Db-y0e" id="cbw-yr-q6Q"/>
+                                            <outlet property="starsLabel" destination="JHm-4w-hj4" id="nsR-BC-qcy"/>
+                                            <outlet property="titleLabel" destination="i3p-ol-efk" id="oz9-pd-Zao"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -91,6 +98,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="pbw-JI-761" id="RJW-Wq-252"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
