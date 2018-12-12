@@ -9,11 +9,12 @@
 import UIKit
 import RxSwiftExt
 import RxSwift
+import RxCocoa
 import Alamofire
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var tableView: SearchResultTableView!
+    @IBOutlet weak var tableView: UITableView!
     
     let viewModel: ViewController.ViewModel = ViewModel()
     let disposeBag = DisposeBag()
@@ -21,16 +22,43 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.getRepositories()
-            .subscribe(onNext: { [weak self] (searchResult) in
-            self?.tableView.items.value = searchResult.items
-        }, onError: { (error) in
-            print(error)
-        }, onCompleted: {
-            
-        }).disposed(by: disposeBag)
+        self.title = "Popular Repositories"
         
-        tableView.bindDataSource()
+        self.bindDataSource()
+        self.cellTapHandling()
+    }
+    
+    private func bindDataSource() {
+        self.viewModel.getRepositories()
+            .subscribe(onNext: { (searchResult) in
+                Observable.of(searchResult.items)
+                    .bind(to: self.tableView.rx.items(
+                        cellIdentifier: String(describing: SearchResultCell.self),
+                        cellType: SearchResultCell.self
+                    )) { row, item, cell in
+                        cell.configureViews(item: item)
+                    }
+                    .disposed(by: self.disposeBag)
+            }, onError: { (error) in
+                
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func cellTapHandling() {
+        self.tableView.rx
+            .modelSelected(SearchResult.Item.self)
+            .subscribe(onNext: { item in
+                
+                guard let controller = UIStoryboard.init(name: "Main", bundle: nil)
+                    .instantiateViewController(withIdentifier: String(describing: DetailViewController.self)) as? DetailViewController
+                    else {return}
+                
+                controller.viewModel = DetailViewController.ViewModel(item: item)
+                self.navigationController?.pushViewController(controller, animated: true)
+                
+            })
+            .disposed(by: disposeBag)
     }
 }
 
