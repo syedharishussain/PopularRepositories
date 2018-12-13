@@ -16,7 +16,6 @@
 		6647D5FE21C19E910019C74C /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647D5FD21C19E910019C74C /* SearchResultCell.swift */; };
 		6647D60021C1A08C0019C74C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647D5FF21C1A08C0019C74C /* AppConstants.swift */; };
 		6647D60221C1B7F20019C74C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647D60121C1B7F20019C74C /* DetailViewController.swift */; };
-		6647D60421C1D10A0019C74C /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D60321C1D1010019C74C /* SVProgressHUD.framework */; };
 		6647D60821C1E0B30019C74C /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647D60721C1E0B00019C74C /* AlertView.swift */; };
 		669273DD21C059FA006120EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669273DC21C059FA006120EF /* AppDelegate.swift */; };
 		669273DF21C059FA006120EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669273DE21C059FA006120EF /* ViewController.swift */; };
@@ -65,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6647D60421C1D10A0019C74C /* SVProgressHUD.framework in Frameworks */,
 				662736F421C07B9600E6EF94 /* RxSwiftExt.framework in Frameworks */,
 				662736F521C07B9600E6EF94 /* Alamofire.framework in Frameworks */,
 				662736F621C07B9600E6EF94 /* RxCocoa.framework in Frameworks */,
@@ -268,7 +266,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwiftExt.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputFileListPaths = (
@@ -278,7 +275,6 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwiftExt.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
