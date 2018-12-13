@@ -67,8 +67,8 @@
                         <constraints>
                             <constraint firstItem="pbw-JI-761" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9wi-QA-iaS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pbw-JI-761" secondAttribute="trailing" id="Vdw-dO-hHP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pbw-JI-761" secondAttribute="bottom" id="Yma-5n-ae0"/>
-                            <constraint firstItem="pbw-JI-761" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zvi-Cf-8m7"/>
+                            <constraint firstAttribute="bottom" secondItem="pbw-JI-761" secondAttribute="bottom" id="Yma-5n-ae0"/>
+                            <constraint firstItem="pbw-JI-761" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="64" id="zvi-Cf-8m7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
