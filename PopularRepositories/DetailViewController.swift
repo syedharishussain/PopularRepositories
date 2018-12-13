@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 import RxSwiftExt
 import Alamofire
-import SVProgressHUD
 
 class DetailViewController: UIViewController {
     
@@ -23,7 +22,7 @@ class DetailViewController: UIViewController {
     var viewModel: DetailViewController.ViewModel?
     
     private let disposeBag = DisposeBag()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bindViewModel()
@@ -38,10 +37,16 @@ class DetailViewController: UIViewController {
         vm.stars.asObservable().bind(to: self.starsLabel.rx.text).disposed(by: disposeBag)
         
         vm.error
-        .asObservable()
-        .unwrap()
-        .subscribe(onNext: {SVProgressHUD.showError(withStatus: $0.localizedDescription)})
-        .disposed(by: disposeBag)
+            .asObservable()
+            .unwrap()
+            .subscribe(
+                onNext: { AlertView(
+                    presentingController: self,
+                    title: "Error",
+                    message: $0.localizedDescription
+                    ).show()}
+            )
+            .disposed(by: disposeBag)
     }
 }
 
@@ -85,18 +90,20 @@ extension DetailViewController {
             return Observable.create({ (observer) -> Disposable in
                 
                 AF.request(url, headers: AppConstants.noCacheHeader)
+                    .validate()
                     .responseDecodable(
                         decoder: AppConstants.decoder,
                         completionHandler: { (response: DataResponse<SearchResult.Item>) in
                             
-                        switch response.result {
-                        case .success(let value):
-                            observer.onNext(value)
+                            switch response.result {
+                            case .success(let value):
+                                observer.onNext(value)
+                                
+                            case .failure(let error):
+                                observer.onError(error)
+                            }
                             
-                        case .failure(let error):
-                            observer.onError(error)
-                        }
-                        observer.onCompleted()
+                            observer.onCompleted()
                     })
                 
                 return Disposables.create()

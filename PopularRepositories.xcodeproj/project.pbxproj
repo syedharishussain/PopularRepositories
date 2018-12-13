@@ -17,6 +17,7 @@
 		6647D60021C1A08C0019C74C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647D5FF21C1A08C0019C74C /* AppConstants.swift */; };
 		6647D60221C1B7F20019C74C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647D60121C1B7F20019C74C /* DetailViewController.swift */; };
 		6647D60421C1D10A0019C74C /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D60321C1D1010019C74C /* SVProgressHUD.framework */; };
+		6647D60821C1E0B30019C74C /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647D60721C1E0B00019C74C /* AlertView.swift */; };
 		669273DD21C059FA006120EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669273DC21C059FA006120EF /* AppDelegate.swift */; };
 		669273DF21C059FA006120EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669273DE21C059FA006120EF /* ViewController.swift */; };
 		669273E221C059FA006120EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669273E021C059FA006120EF /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		6647D5FF21C1A08C0019C74C /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		6647D60121C1B7F20019C74C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6647D60321C1D1010019C74C /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		6647D60721C1E0B00019C74C /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertView.swift; path = ../../../../.Trash/AlertView.swift; sourceTree = "<group>"; };
 		669273D921C059FA006120EF /* PopularRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopularRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		669273DC21C059FA006120EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		669273DE21C059FA006120EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				6647D5FD21C19E910019C74C /* SearchResultCell.swift */,
 				669273DE21C059FA006120EF /* ViewController.swift */,
 				6647D60121C1B7F20019C74C /* DetailViewController.swift */,
+				6647D60721C1E0B00019C74C /* AlertView.swift */,
 				669273E021C059FA006120EF /* Main.storyboard */,
 				669273E321C059FB006120EF /* Assets.xcassets */,
 				669273E521C059FB006120EF /* LaunchScreen.storyboard */,
@@ -293,6 +296,7 @@
 				662736E621C076C700E6EF94 /* SearchResult.swift in Sources */,
 				6647D60021C1A08C0019C74C /* AppConstants.swift in Sources */,
 				6647D5FE21C19E910019C74C /* SearchResultCell.swift in Sources */,
+				6647D60821C1E0B30019C74C /* AlertView.swift in Sources */,
 				669273DD21C059FA006120EF /* AppDelegate.swift in Sources */,
 				6647D60221C1B7F20019C74C /* DetailViewController.swift in Sources */,
 			);

@@ -11,7 +11,6 @@ import RxSwiftExt
 import RxSwift
 import RxCocoa
 import Alamofire
-import SVProgressHUD
 
 class ViewController: UIViewController {
     
@@ -28,7 +27,7 @@ class ViewController: UIViewController {
         
         self.tableView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: #selector(fetchSearchResults), for: .valueChanged)
-
+        
         self.fetchSearchResults()
         self.bindSearchResultItems()
         self.bindError()
@@ -60,10 +59,15 @@ class ViewController: UIViewController {
     
     private func bindError() {
         self.viewModel.error
-        .asObservable()
-        .unwrap()
-        .subscribe(onNext: {SVProgressHUD.showError(withStatus: $0.localizedDescription)})
-        .disposed(by: disposeBag)
+            .asObservable()
+            .unwrap()
+            .subscribe(onNext: { AlertView(
+                presentingController: self,
+                title: "Error",
+                message: $0.localizedDescription
+                ).show()}
+            )
+            .disposed(by: disposeBag)
     }
     
     private func cellTapHandling() {
@@ -103,14 +107,14 @@ extension ViewController {
                     .responseDecodable(
                         decoder: AppConstants.decoder,
                         completionHandler: { (response: DataResponse<SearchResult>) in
-
+                            
                             switch response.result {
                             case .success(let value):
                                 self.items.value = value.items
                             case .failure(let error):
                                 self.error.value = error
                             }
-
+                            
                             observer.onCompleted()
                     })
                 return Disposables.create()
