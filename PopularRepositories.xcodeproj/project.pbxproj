@@ -102,6 +102,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6606C83D21C1EB17003C438F /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				669273E521C059FB006120EF /* LaunchScreen.storyboard */,
+				669273E821C059FB006120EF /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		6606C83E21C1EB39003C438F /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				6647D5FF21C1A08C0019C74C /* AppConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		6606C83F21C1EB44003C438F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				669273E321C059FB006120EF /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6606C84021C1EB56003C438F /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				6606C84121C1EB61003C438F /* ViewControllers */,
+				6606C84221C1EB70003C438F /* Views */,
+				6606C84321C1EB77003C438F /* Cells */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		6606C84121C1EB61003C438F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				669273DE21C059FA006120EF /* ViewController.swift */,
+				6647D60121C1B7F20019C74C /* DetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6606C84221C1EB70003C438F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				669D159F21C1E63F00255E2C /* AlertView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6606C84321C1EB77003C438F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6647D5FD21C19E910019C74C /* SearchResultCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		662736E221C0746F00E6EF94 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,17 +213,13 @@
 		669273DB21C059FA006120EF /* PopularRepositories */ = {
 			isa = PBXGroup;
 			children = (
-				662736E221C0746F00E6EF94 /* Model */,
 				669273DC21C059FA006120EF /* AppDelegate.swift */,
-				6647D5FD21C19E910019C74C /* SearchResultCell.swift */,
-				669273DE21C059FA006120EF /* ViewController.swift */,
-				6647D60121C1B7F20019C74C /* DetailViewController.swift */,
-				669D159F21C1E63F00255E2C /* AlertView.swift */,
+				6606C84021C1EB56003C438F /* Screens */,
+				6606C83F21C1EB44003C438F /* Resources */,
+				6606C83E21C1EB39003C438F /* Constants */,
+				6606C83D21C1EB17003C438F /* SupportingFiles */,
+				662736E221C0746F00E6EF94 /* Model */,
 				669273E021C059FA006120EF /* Main.storyboard */,
-				669273E321C059FB006120EF /* Assets.xcassets */,
-				669273E521C059FB006120EF /* LaunchScreen.storyboard */,
-				669273E821C059FB006120EF /* Info.plist */,
-				6647D5FF21C1A08C0019C74C /* AppConstants.swift */,
 			);
 			path = PopularRepositories;
 			sourceTree = "<group>";
