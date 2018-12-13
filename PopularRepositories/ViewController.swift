@@ -18,9 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     private let refreshControl = UIRefreshControl()
     
-    let viewModel: ViewController.ViewModel = ViewModel()
-    let disposeBag = DisposeBag()
-    let searchResult = Variable<SearchResult?>(nil)
+    private let viewModel: ViewController.ViewModel = ViewModel()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,25 +31,24 @@ class ViewController: UIViewController {
 
         self.fetchSearchResults()
         self.bindSearchResultItems()
+        self.bindError()
         self.cellTapHandling()
     }
     
-    @objc func fetchSearchResults() {
+    @objc private func fetchSearchResults() {
         self.viewModel.getRepositories()
-            .do(onSubscribe: {self.refreshControl.beginRefreshing()})
-            .subscribe(
-                onNext: {self.searchResult.value = $0},
-                onError: {SVProgressHUD.showError(withStatus: $0.localizedDescription)},
-                onCompleted: {self.refreshControl.endRefreshing()}
-            ).disposed(by: disposeBag)
+            .do(
+                onCompleted: {self.refreshControl.endRefreshing()},
+                onSubscribe: {self.refreshControl.beginRefreshing()}
+            )
+            .subscribe()
+            .disposed(by: disposeBag)
     }
     
-    @objc private func bindSearchResultItems() {
+    private func bindSearchResultItems() {
         
-        self.searchResult
+        self.viewModel.items
             .asObservable()
-            .unwrap()
-            .map({$0.items})
             .bind(to: self.tableView.rx.items(
                 cellIdentifier: String(describing: SearchResultCell.self),
                 cellType: SearchResultCell.self
@@ -60,7 +58,15 @@ class ViewController: UIViewController {
             .disposed(by: self.disposeBag)
     }
     
-    func cellTapHandling() {
+    private func bindError() {
+        self.viewModel.error
+        .asObservable()
+        .unwrap()
+        .subscribe(onNext: {SVProgressHUD.showError(withStatus: $0.localizedDescription)})
+        .disposed(by: disposeBag)
+    }
+    
+    private func cellTapHandling() {
         self.tableView.rx
             .modelSelected(SearchResult.Item.self)
             .subscribe(onNext: { item in
@@ -81,23 +87,34 @@ extension ViewController {
     
     struct ViewModel {
         
-        func getRepositories() -> Observable<SearchResult> {
+        let items = Variable<[SearchResult.Item]>([])
+        let error = Variable<Error?>(nil)
+        
+        private let disposeBag = DisposeBag()
+        
+        init() {
+            _ = self.getRepositories().asObservable().subscribe().disposed(by: disposeBag)
+        }
+        
+        func getRepositories() -> Observable<Empty> {
+            
             return Observable.create { observer -> Disposable in
                 AF.request(AppConstants.apiUrl)
                     .responseDecodable(
                         decoder: AppConstants.decoder,
                         completionHandler: { (response: DataResponse<SearchResult>) in
-                            
+
                             switch response.result {
-                            case .success(let value): observer.onNext(value)
-                            case .failure(let error): observer.onError(error)
+                            case .success(let value):
+                                self.items.value = value.items
+                            case .failure(let error):
+                                self.error.value = error
                             }
-                            
+
                             observer.onCompleted()
                     })
                 return Disposables.create()
             }
-            
         }
     }
 }

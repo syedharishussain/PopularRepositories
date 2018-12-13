@@ -15,14 +15,14 @@ import SVProgressHUD
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var languageLabel: UILabel!
-    @IBOutlet weak var starsLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var languageLabel: UILabel!
+    @IBOutlet private weak var starsLabel: UILabel!
     
     var viewModel: DetailViewController.ViewModel?
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,12 @@ class DetailViewController: UIViewController {
         vm.description.asObservable().bind(to: self.descriptionLabel.rx.text).disposed(by: disposeBag)
         vm.language.asObservable().bind(to: self.languageLabel.rx.text).disposed(by: disposeBag)
         vm.stars.asObservable().bind(to: self.starsLabel.rx.text).disposed(by: disposeBag)
+        
+        vm.error
+        .asObservable()
+        .unwrap()
+        .subscribe(onNext: {SVProgressHUD.showError(withStatus: $0.localizedDescription)})
+        .disposed(by: disposeBag)
     }
 }
 
@@ -46,8 +52,9 @@ extension DetailViewController {
         let description = Variable<String>("")
         let language = Variable<String>("")
         let stars = Variable<String>("")
+        let error = Variable<Error?>(nil)
         
-        let disposeBag = DisposeBag()
+        private let disposeBag = DisposeBag()
         
         init(item: SearchResult.Item) {
             self.updateVariables(from: item)
@@ -69,7 +76,7 @@ extension DetailViewController {
                 .subscribe(onNext: { (item) in
                     self.updateVariables(from: item)
                 }, onError: { (error) in
-                    SVProgressHUD.showError(withStatus: error.localizedDescription)
+                    self.error.value = error
                 }).disposed(by: disposeBag)
         }
         

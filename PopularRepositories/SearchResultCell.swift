@@ -12,10 +12,10 @@ import RxCocoa
 
 class SearchResultCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     var viewModel: SearchResultCell.ViewModel? {
         didSet {
