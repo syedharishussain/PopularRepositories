@@ -13,14 +13,14 @@
 		6647D60021C1A08C0019C74C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647D5FF21C1A08C0019C74C /* AppConstants.swift */; };
 		6647D60221C1B7F20019C74C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647D60121C1B7F20019C74C /* DetailViewController.swift */; };
 		6647D60821C1E0B30019C74C /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647D60721C1E0B00019C74C /* AlertView.swift */; };
-		6647D61E21C1E2820019C74C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D61A21C1E2820019C74C /* RxSwift.framework */; };
-		6647D61F21C1E2820019C74C /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D61B21C1E2820019C74C /* RxCocoa.framework */; };
-		6647D62021C1E2820019C74C /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D61C21C1E2820019C74C /* RxSwiftExt.framework */; };
-		6647D62121C1E2820019C74C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D61D21C1E2820019C74C /* Alamofire.framework */; };
-		6647D62321C1E2880019C74C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D61D21C1E2820019C74C /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6647D62521C1E2880019C74C /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D61B21C1E2820019C74C /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6647D62721C1E2880019C74C /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D61A21C1E2820019C74C /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6647D62921C1E2880019C74C /* RxSwiftExt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D61C21C1E2820019C74C /* RxSwiftExt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6647D63121C1E37F0019C74C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D62C21C1E37E0019C74C /* Alamofire.framework */; };
+		6647D63221C1E37F0019C74C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D62D21C1E37F0019C74C /* RxSwift.framework */; };
+		6647D63321C1E37F0019C74C /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D62E21C1E37F0019C74C /* RxSwiftExt.framework */; };
+		6647D63521C1E3890019C74C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D62C21C1E37E0019C74C /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6647D63621C1E3890019C74C /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D62A21C1E37E0019C74C /* RxCocoa.framework */; };
+		6647D63721C1E3890019C74C /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D62A21C1E37E0019C74C /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6647D63921C1E3890019C74C /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D62D21C1E37F0019C74C /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6647D63B21C1E38A0019C74C /* RxSwiftExt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6647D62E21C1E37F0019C74C /* RxSwiftExt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		669273DD21C059FA006120EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669273DC21C059FA006120EF /* AppDelegate.swift */; };
 		669273DF21C059FA006120EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669273DE21C059FA006120EF /* ViewController.swift */; };
 		669273E221C059FA006120EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 669273E021C059FA006120EF /* Main.storyboard */; };
@@ -46,10 +46,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6647D62921C1E2880019C74C /* RxSwiftExt.framework in Embed Frameworks */,
-				6647D62521C1E2880019C74C /* RxCocoa.framework in Embed Frameworks */,
-				6647D62321C1E2880019C74C /* Alamofire.framework in Embed Frameworks */,
-				6647D62721C1E2880019C74C /* RxSwift.framework in Embed Frameworks */,
+				6647D63B21C1E38A0019C74C /* RxSwiftExt.framework in Embed Frameworks */,
+				6647D63721C1E3890019C74C /* RxCocoa.framework in Embed Frameworks */,
+				6647D63521C1E3890019C74C /* Alamofire.framework in Embed Frameworks */,
+				6647D63921C1E3890019C74C /* RxSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,10 +63,11 @@
 		6647D5FF21C1A08C0019C74C /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		6647D60121C1B7F20019C74C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6647D60721C1E0B00019C74C /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertView.swift; path = ../../../../.Trash/AlertView.swift; sourceTree = "<group>"; };
-		6647D61A21C1E2820019C74C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxSwift.framework; sourceTree = "<group>"; };
-		6647D61B21C1E2820019C74C /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = "<group>"; };
-		6647D61C21C1E2820019C74C /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxSwiftExt.framework; sourceTree = "<group>"; };
-		6647D61D21C1E2820019C74C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
+		6647D62A21C1E37E0019C74C /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = PopularRepositories/Frameworks/RxCocoa.framework; sourceTree = "<group>"; };
+		6647D62B21C1E37E0019C74C /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = PopularRepositories/Frameworks/RxAtomic.framework; sourceTree = "<group>"; };
+		6647D62C21C1E37E0019C74C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = PopularRepositories/Frameworks/Alamofire.framework; sourceTree = "<group>"; };
+		6647D62D21C1E37F0019C74C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = PopularRepositories/Frameworks/RxSwift.framework; sourceTree = "<group>"; };
+		6647D62E21C1E37F0019C74C /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = PopularRepositories/Frameworks/RxSwiftExt.framework; sourceTree = "<group>"; };
 		669273D921C059FA006120EF /* PopularRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopularRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		669273DC21C059FA006120EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		669273DE21C059FA006120EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,10 +85,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6647D61F21C1E2820019C74C /* RxCocoa.framework in Frameworks */,
-				6647D62021C1E2820019C74C /* RxSwiftExt.framework in Frameworks */,
-				6647D61E21C1E2820019C74C /* RxSwift.framework in Frameworks */,
-				6647D62121C1E2820019C74C /* Alamofire.framework in Frameworks */,
+				6647D63221C1E37F0019C74C /* RxSwift.framework in Frameworks */,
+				6647D63621C1E3890019C74C /* RxCocoa.framework in Frameworks */,
+				6647D63121C1E37F0019C74C /* Alamofire.framework in Frameworks */,
+				6647D63321C1E37F0019C74C /* RxSwiftExt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,10 +122,11 @@
 		662736EE21C07B9500E6EF94 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6647D61D21C1E2820019C74C /* Alamofire.framework */,
-				6647D61B21C1E2820019C74C /* RxCocoa.framework */,
-				6647D61A21C1E2820019C74C /* RxSwift.framework */,
-				6647D61C21C1E2820019C74C /* RxSwiftExt.framework */,
+				6647D62C21C1E37E0019C74C /* Alamofire.framework */,
+				6647D62B21C1E37E0019C74C /* RxAtomic.framework */,
+				6647D62A21C1E37E0019C74C /* RxCocoa.framework */,
+				6647D62D21C1E37F0019C74C /* RxSwift.framework */,
+				6647D62E21C1E37F0019C74C /* RxSwiftExt.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -451,6 +453,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PopularRepositories/Frameworks",
 				);
 				INFOPLIST_FILE = PopularRepositories/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -474,6 +477,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PopularRepositories/Frameworks",
 				);
 				INFOPLIST_FILE = PopularRepositories/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
