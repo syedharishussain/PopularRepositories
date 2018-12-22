@@ -106,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				669273E521C059FB006120EF /* LaunchScreen.storyboard */,
-				669273E821C059FB006120EF /* Info.plist */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -220,6 +219,7 @@
 				6606C83D21C1EB17003C438F /* SupportingFiles */,
 				662736E221C0746F00E6EF94 /* Model */,
 				669273E021C059FA006120EF /* Main.storyboard */,
+				669273E821C059FB006120EF /* Info.plist */,
 			);
 			path = PopularRepositories;
 			sourceTree = "<group>";
